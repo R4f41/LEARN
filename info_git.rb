@@ -54,4 +54,7 @@ git log
 git remote -v
 git remote add origin https://github.com/R4f41/LEARN.git
 git push -u origin master
+git remote remove origin
+git remote add origin https://[TOKEN]@github.com/[USER]/[REPO]
+git pus
 -------------------------------------
