@@ -7,7 +7,7 @@ nproc
 passwd
 clear
 reboot
-
+lsb_release -a
 
 
 
