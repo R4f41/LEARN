@@ -1,5 +1,5 @@
 --- VPS - LOG IN && UPDATE && PASSWORD CHANGE && ADD USER
-1. ssh root@185.200.45.224      - connect to server, port choose ssh user@0.0.0.0 -p 22
+1. ssh root@0.0.45.224      - connect to server, port choose ssh user@0.0.0.0 -p 22
 2. apt -y update                - zaktualizowanie listy pakietów ze źródła 
 3. apt -y upgrade               - zaktualizowanie pakietów oraz systemu w delikatny sposób
 4. passwd                       - zmiana hasła użytkownika
