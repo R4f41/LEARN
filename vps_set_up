@@ -1,0 +1,31 @@
+--- VPS - LOG IN && UPDATE && PASSWORD CHANGE && ADD USER
+1. ssh root@185.200.45.224      - connect to server, port choose ssh user@0.0.0.0 -p 22
+2. apt -y update                - zaktualizowanie listy pakietów ze źródła 
+3. apt -y upgrade               - zaktualizowanie pakietów oraz systemu w delikatny sposób
+4. passwd                       - zmiana hasła użytkownika
+5. adduser <username>
+   adduser <username> --ingroup admin
+6. usermod -aG sudo <username>
+
+--- VPS - security
+1. Disable root login -> in file /etc/ssh/sshd_config set 'PermitRootLogin no'
+2. Change the SSH port -> in file /etc/ssh/sshd_config set 'Port <XX>'
+3. Update && upgrade soft, remove unwanted modules/packages
+4. Disble IPv6 if dont use ->
+- check it with command 'ip a' or 'ip -6 addr'
+- in /etc/sysconfig/network and ser NETWORKING_IPV6=no and IPV6INIT=no
+5. Install firewall
+- check open ports -> 'netstat -tulpn | grep LISTEN' or 'sudo netstat -pant' or 'sudo netstat -pant | grep sshd'
+- sudo apt install ufw -> Uncomplicated FireWall
+- sudo ufw status || status verbose || status numbered
+- sudo vim  /etc/default/ufw  -> IPV6=yes or no #disable IPv6
+- ufw disable || enable 
+- sudo ufw default deny/allow incoming/outgoing #default rule + 80/tcp + ssh
+- sudo ufw allow ssh || allow 22/tcp || allow xxxx/tcp || 80/tcp webbrowser
+- sudo ufw allow 1000:2000/tcp || allow 1000:2000/udp || allow from 192.168.255.255
+- sudo ufw delete allow 80/tcp || delete allow ssh
+- sudo ufw status numbered || sudo ufw delete [number] #delete thru number
+- sudo ufw reset  #reset firewall to defaults
+
+--- VPS - RUBY
+1. rbenv or rvm
