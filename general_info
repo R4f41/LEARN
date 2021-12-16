@@ -1,6 +1,6 @@
 # https://www.debian.org/doc/manuals/apt-guide/index.pl.html
 # http://httpbin.org/ip
-
+# https://olivermarshall.net/how-to-upload-a-file-to-google-drive-from-the-command-line/
 # --- PRZYDATNE COMENDY
 uname -a
 free
