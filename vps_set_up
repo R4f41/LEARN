@@ -29,3 +29,7 @@
 
 --- VPS - RUBY
 1. rbenv or rvm
+
+--- VPS - HANAMI 1.3
+1. puma #servert production mode
+2. 
