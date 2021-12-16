@@ -1,6 +1,7 @@
 # https://www.debian.org/doc/manuals/apt-guide/index.pl.html
+# http://httpbin.org/ip
 
-PRZYDATNE COMENDY
+# --- PRZYDATNE COMENDY
 uname -a
 free
 nproc             
