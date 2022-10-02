@@ -21,6 +21,9 @@ VPS settings
 5. hostname add.your.domain
 6. install screen
 7. install wget
+install ranger
+install htop
+
 
 Essential security measures:
 - use regular user
