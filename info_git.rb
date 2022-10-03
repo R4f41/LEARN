@@ -14,12 +14,14 @@ git add *.rb	# dodaje wszystkie pliki o rozrzerzeniu rb do śledzenia
 git add 		# dodaje wszystkie pliki i katalogi do śledzenia, można też dodać katalog
 git add 		# również wysyła po zmianie pliki do poczekalni
 git commit -m 'initial project version'
+git commit -am
 -------------------------------------
 git clone [URL] #klonowanie repozytorium
 git clone https://github.com/R4f41/R4f41	#klonuje pliki z repozytorium
 git clone https://github.com/libgit2/libgit2 mylibgit
 git status 		#sprawdzenie stanu plików
 git status -s	# lub --short, skrócona wersja status	
+git show
 -------------------------------------
 #https://git-scm.com/book/pl/v2/Podstawy-Gita-Rejestrowanie-zmian-w-repozytorium
 git diff 		#pokazuje róznice jakie zaszły w plikach, chyba że było 'git add'
