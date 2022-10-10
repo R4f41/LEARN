@@ -17,6 +17,7 @@ htop  			#good process list
 screen 			# multiple screens / sessions
 watch df -h 
 cat nazwa.pliku 	#podagląd pliku w konsoli
+touch / mkdir / rm -r / 
 
 #VPS settings
 hostname add.your.domain
@@ -25,9 +26,9 @@ hostname add.your.domain
 sudo apt install screen && sudo apt install wget
 sudo apt install ranger && sudo apt install htop
 sudo apt install docker.io && sudo apt install docker-compose
-yes | sudo apt install fish	#sudo apt install fish --yes
+yes | sudo apt install fish	#sudo apt install fish --yes https://fishshell.com/docs/3.0/tutorial.html
 
-Essential security measures:
+#Essential security measures:
 - use regular user
 - enable firewall
 - add SSH key
