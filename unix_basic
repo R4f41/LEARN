@@ -1,29 +1,31 @@
 # https://www.debian.org/doc/manuals/apt-guide/index.pl.html
 # http://httpbin.org/ip
 # https://olivermarshall.net/how-to-upload-a-file-to-google-drive-from-the-command-line/
+
 # --- PRZYDATNE COMENDY
-uname -a
+name -a
 free
 nproc             
 passwd
 clear
 reboot        
-lsb_release -a      #distribution info
+lsb_release -a      	#distribution info
 nmap
-su                  #user switch
-ufw #firewall
-htop  #good process list
-screen # multiple screens / sessions
+su                  	#user switch
+ufw 			#firewall
+htop  			#good process list
+screen 			# multiple screens / sessions
 watch df -h 
+cat nazwa.pliku 	#podagląd pliku w konsoli
 
+#VPS settings
+hostname add.your.domain
 
-VPS settings
-5. hostname add.your.domain
-6. install screen
-7. install wget
-install ranger
-install htop
-
+#BASIC INSTALL COMPONENTS AND PROGRAMS
+sudo apt install screen && sudo apt install wget
+sudo apt install ranger && sudo apt install htop
+sudo apt install docker.io && sudo apt install docker-compose
+yes | sudo apt install fish	#sudo apt install fish --yes
 
 Essential security measures:
 - use regular user
