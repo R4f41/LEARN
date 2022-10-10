@@ -1,3 +1,5 @@
+###################### polecenia DOCKER'a ##########################
+
 #uruchamianie dockera
 docker run alpine ls -l   ||   docker run <name> <command>
 
@@ -39,6 +41,8 @@ docker cp <nazwa_kontenera>:nazwa_pliku_z_kontenera.plik .  #kopiowanie do bież
 #kopiowanie do kontenera
 docker cp moj_lokalny.plik <nazwa_kontenera>:/
 
+docker volume create <nazwa_kontenera>
+docker volume ls   ||   docker volume rm
 
 
 ###################### DOCKERFILE ##########################
@@ -54,20 +58,26 @@ COPY ../plik.txt .
 RUN apt-get update
 RUN ls
 RUN apt-get install -- yes vim
-
+#------------------------
 FROM python:3.8
 COPY requirements.txt   # w pliku umieszczamy jakie paczki mają być  np. flask
 RUN pip install -r requirements.txt
 COPY app.py 
 CMD python app.py 
 CMD pwd && ls
-
+#------------------------
 CMD FLASK_APP=app python -m flask run --host=0.0.0.0 
 #następnie uruchamiamuy poleceniem docker run pyapp:web
 #docker run --publish 5000 pyapp:web <- otwarcie na porcie 5000 
-
+#------------------------
 #polecenie ADD potrawi pobrać coś z internetu, rozpakowuje automatycznie pliki tar.gz
 ADD http://ftp.pl.debian.org/plik.pl .
 #docker build -f inny.Dockerfile -t nazwaObrazu
-
+#------------------------
 WORKDIR /app #ustala katalog roboczy, wszystko poniżej będzie działo się w tym katalogu startowym
+#------------------------
+#pakowanie programów do konterara i uruchamianie ich z włąsnymi wartościami
+
+FROM ubuntu
+ENTRYPOINT ['ls','al']
+docker run <nazwa_obrazu> parametr_podmieniajacy #np. /katalog
