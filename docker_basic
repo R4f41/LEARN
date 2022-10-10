@@ -10,5 +10,64 @@ docker container ls -a   ||   docker ps -a   ||   docker ps
 #uruchamianie kontenera
 docker start <container ID> || docker start <container name>
 
-#uruchamianie wybranego polecenia w dockerze
+#uruchamianie wybranego polecenia w dockerze, pliku itp
 docker exec <container ID> cat plik.txt 
+
+#wysylanie contenera ? tworzenie obrazu? - np. dodano cos w kontenerze po zalogowaniu i stworzono nowy obraz 
+docker commit <container ID> <name>
+
+#pokazywanie listy obrazów
+docker image ls
+
+#wyswietlanie histori obrazu
+docker history <name>
+
+#pobranie obrazu z hub.docker.com, następnie uruchamiamy poprzez <docker run <name_of_container>>
+docker pull <name_of_container> 
+
+#wysylanie contenera, ogólnie dostępne w hub.docker, dodatwkow nazzwa w postaci <nazwa_uzytkownika/nazwa_obrazu>
+docker push user_name/image_name
+#mozna umieszczać swoje obrazy na Google Cloud Registry gcr.io
+
+#zmiana nazwy obrazu 
+docker tag <nazwa_stara> <nazwa_nowa>
+
+#kopiowanie plików bezpośrednio z kontenera
+docker cp <nazwa_kontenera>:nazwa_pliku_z_kontenera.txt moj_lokalny.plik
+docker cp <nazwa_kontenera>:nazwa_pliku_z_kontenera.plik .  #kopiowanie do bieżącej lokalizacji
+
+#kopiowanie do kontenera
+docker cp moj_lokalny.plik <nazwa_kontenera>:/
+
+
+
+###################### DOCKERFILE ##########################
+# co polecenie docker tworzy nowy kontener, dla każdego polecenia z dockerfila, po kolei
+# plik nazywamy Dockerfile
+# polecenie dockera to docker build . <- buduje na podstawie pliku Dockerfile w bieżącym katalogu
+# docker build --tag nazwa_kontenera .
+# docker build --tag nazwa_kontenera:wersja_nadana .
+# docker build -f ../Dockerfile . #inna lokalziacja Dockerfile, podaj inna nazwę Dockerfile
+FROM <nazwa_kontenera>:wersja_obrazu
+COPY moj_lokalny.plik . #kopiowanie pliku z katalogu do wnętrza konenera
+COPY ../plik.txt .
+RUN apt-get update
+RUN ls
+RUN apt-get install -- yes vim
+
+FROM python:3.8
+COPY requirements.txt   # w pliku umieszczamy jakie paczki mają być  np. flask
+RUN pip install -r requirements.txt
+COPY app.py 
+CMD python app.py 
+CMD pwd && ls
+
+CMD FLASK_APP=app python -m flask run --host=0.0.0.0 
+#następnie uruchamiamuy poleceniem docker run pyapp:web
+#docker run --publish 5000 pyapp:web <- otwarcie na porcie 5000 
+
+#polecenie ADD potrawi pobrać coś z internetu, rozpakowuje automatycznie pliki tar.gz
+ADD http://ftp.pl.debian.org/plik.pl .
+#docker build -f inny.Dockerfile -t nazwaObrazu
+
+WORKDIR /app #ustala katalog roboczy, wszystko poniżej będzie działo się w tym katalogu startowym
