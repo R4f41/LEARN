@@ -1,0 +1,14 @@
+#uruchamianie dockera
+docker run alpine ls -l   ||   docker run <name> <command>
+
+#uruchamianie bash, bądź cokolwiek w docker
+docker run --interactive --tty ubuntu bash   ||   docker run -it ubuntu bash
+
+#wyswietla zainstalowane contenery
+docker container ls -a   ||   docker ps -a   ||   docker ps
+
+#uruchamianie kontenera
+docker start <container ID> || docker start <container name>
+
+#uruchamianie wybranego polecenia w dockerze
+docker exec <container ID> cat plik.txt 
