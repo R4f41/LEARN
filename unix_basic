@@ -12,14 +12,14 @@ reboot
 lsb_release -a      	#distribution info
 nmap
 su                  	#user switch
-ufw 			#firewall
-htop  			#good process list
-screen 			# multiple screens / sessions
+ufw 			        #firewall
+htop  			        #good process list
+screen 			        # multiple screens / sessions
 watch df -h 
-cat nazwa.pliku 	#podagląd pliku w konsoli
-touch / mkdir / rm -r / 
-type ls || type la #sprawdza co to za komenda
-alias ll='ls -alF'   ||   alias la='ls -A'   ||   alias l='ls -CF   #tworzenie przydatnych aliasów 
+cat nazwa.pliku 	    #podagląd pliku w konsoli
+touch / mkdir / rm -r / # tworzy pliki / towrzy katalogi / usuwa katalofi - tam gdzie git dodać flagę yes np. yes | rm -r <katalog>
+type ls || type la      #sprawdza co to za komenda
+alias ll='ls -alF'   ||   alias la='ls -A'   ||   alias l='ls -CF'   #tworzenie przydatnych aliasów 
 
 #VPS settings
 hostname add.your.domain
