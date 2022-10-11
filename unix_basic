@@ -18,6 +18,8 @@ screen 			# multiple screens / sessions
 watch df -h 
 cat nazwa.pliku 	#podagląd pliku w konsoli
 touch / mkdir / rm -r / 
+type ls || type la #sprawdza co to za komenda
+alias ll='ls -alF'   ||   alias la='ls -A'   ||   alias l='ls -CF   #tworzenie przydatnych aliasów 
 
 #VPS settings
 hostname add.your.domain
