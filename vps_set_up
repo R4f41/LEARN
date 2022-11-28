@@ -10,6 +10,7 @@
 --- VPS - security
 1. Disable root login -> in file /etc/ssh/sshd_config set 'PermitRootLogin no'
 2. Change the SSH port -> in file /etc/ssh/sshd_config set 'Port <XX>'
+2.a. Restart 'sudo systemctl restart sshd'
 3. Update && upgrade soft, remove unwanted modules/packages
 4. Disble IPv6 if dont use ->
 - check it with command 'ip a' or 'ip -6 addr'
