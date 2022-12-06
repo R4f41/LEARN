@@ -1,0 +1,5 @@
+# Zmiana rozmiaru zjdęć za pomocą ubuntu
+Uruchom 'fish', przejdź do katalogu z plikami img ( Windows w WSL to /mnt )
+w fish'u komenda 'S' - przejedź do aktualnego katalogu
+za pomocą ImageMagic ->  sudo apt-get install imagemagick
+uruchom komendę -> mogrify -resize 50% *.jpg    # zmniejsza pliki o 50% oraz nadpisuje istniejące
